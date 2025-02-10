@@ -88,6 +88,29 @@ int add_to_list(list *ll, char *item) {
 
 }; // add_to_list
 
+/* Removes the head of the list ll, extracts the string stored in the head 
+* (and move the head of ll to the next node in the list), 
+* and returns a pointer to this string. also frees the removed head node. */
+char* remove_from_list(list* ll){
+
+  // Check if list is empty
+  if(ll == NULL || ll->head == NULL) { 
+    return NULL; 
+  }
+
+  // Save pointer to string
+  node* temp=ll->head;
+  char *removed_item = temp->item; 
+        
+  // Move head to next node and free old node
+  ll->head=ll->head->next;
+  free(temp);
+
+  return removed_item;
+
+} // remove_from_list
+
+
 //Prints the list
 void print_list(list *ll) {
 
@@ -105,6 +128,44 @@ void print_list(list *ll) {
   }
 
 } // print_list;
+
+/* Flushes the entire list and re-initializes the list. The passed pointer
+* points to a valid, empty list when function returns.
+* Any memory allocated to store nodes in the list should be freed.
+*/
+void flush_list(list *ll){
+
+  // Check if list is empty
+  if(ll==NULL){
+    return;
+  }
+
+  node *current = ll->head;
+  while (current !=NULL){
+    node *temp = current;
+    current = current -> next;
+    free(temp->item);
+    free(temp);
+  }
+        
+  ll->head=NULL;
+
+}// flush_list
+
+/* De-allocates all data for the list. Ensure all memory allocated for list
+* ll is freed, including any allocated strings and list ll itself. */
+void free_list(list **ll){
+
+  // Check if list is empty
+  if (ll == NULL){
+    return;
+  }
+        
+  flush_list(*ll);
+  free(*ll);
+  *ll=NULL;
+
+}// free_list
 
 int main() {
   //creates the list
