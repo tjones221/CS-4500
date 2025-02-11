@@ -141,13 +141,17 @@ void flush_list(list *ll){
   }
 
   node *current = ll->head;
+  //Iterate through list
   while (current !=NULL){
     node *temp = current;
     current = current -> next;
-    free(temp->item);
+    
+    //free allocated string and node
+    free(temp->item); 
     free(temp);
   }
-        
+
+  // reset list to empty
   ll->head=NULL;
 
 }// flush_list
@@ -160,7 +164,8 @@ void free_list(list **ll){
   if (ll == NULL){
     return;
   }
-        
+
+  // clear all nodes and free the list struct 
   flush_list(*ll);
   free(*ll);
   *ll=NULL;
@@ -181,6 +186,29 @@ int main() {
 
   //prints the entire list
   print_list(creation_list);
+
+  //remove head of list and print item 
+  char *removed_item = remove_from_list(creation_list);
+  if (removed_item != NULL){
+    printf("\nRemoved item: %s\n", removed_item);
+    free(removed_item);
+  }
+
+  //Print list after remove_from_list is executed 
+  printf("\nList after removing head:\n");
+  print_list(creation_list);
+
+  //Flush the list 
+  flush_list(creation_list);
+  printf("\nList after flushing:\n");
+  print_list(creation_list); 
+
+  // Free the list
+  free_list(&creation_list);
+  if(creation_list == NULL){
+    printf("\nList successfully deallocated.\n");
+  }
+  
 
   return 0;
 } // main
