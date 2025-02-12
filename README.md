@@ -12,9 +12,9 @@ We have neither given nor received unauthorized assistance on this work.
 
 VIRTUAL MACHINE (VM) INFORMATION:
 =================================
-NAME OF VIRTUAL MACHINE (VM):
-USERNAME:
-PASSWORD:
+NAME OF VIRTUAL MACHINE (VM): KylieUbuntu (ksanch20)
+USERNAME: kylie
+PASSWORD: Rev22!
 
 --
 
