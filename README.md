@@ -32,19 +32,18 @@ PROBLEM DESCRIPTION AND REMEDIATION:
 
     PART 0: SET UP
     ==============
-
+    - 
 
     PART 1: LINKED LIST
     ===================
     Function: create_list()
-    - Problem:
-    - Solution:
+    - 
 
     Function: add_to_list()
     - Problem: Problem Areas include understanding linked lists, the function of structs, and connecting the list to the node.
     - Solution: When attempting to make the “add_to_list” function, distinguishing the last element and understanding the method 
-    to connect the list and node were difficult tasks.  The “item” variable, “next” variable, and “head” variable are elements 
-    needed to move through the linked list, but each variable is in a different Structs . To connect the elements for the linked 
+    to connect the list and node were difficult tasks. The “item” variable, “next” variable, and “head” variable are elements 
+    needed to move through the linked list, but each variable is in a different Structs. To connect the elements for the linked 
     list, you need a current variable of the type node that is pointing to the head element of the list. With this extension, 
     the user now knows of what the leading item is and can move to the next item with knowledge of what is happening.
 
@@ -52,3 +51,11 @@ PROBLEM DESCRIPTION AND REMEDIATION:
     PART 2: WRITING A MAKEFILE
     ==========================
 
+
+RESOURCES:
+==========
+https://youtu.be/N6dOwBde7-M?si=jFkmXt5EVssos4oo
+- Helpful in understanding the basic structure of a linked list in simple terms. No unnecessary jargon is littered throughout the text.
+
+https://youtu.be/DneLxrPmmsw?si=0cyet3hR8BwIJiGM
+- Another source that is helpful in understanding linked list dynamics.
