@@ -49,7 +49,7 @@ int main() {
 
     // Test 2: ----------------------------------------
     // creates the list
-    list *creation_list_2 = creat_list();
+    list *creation_list_2 = create_list();
 
     // practice strings to add to linked list
     add_to_list(creation_list_2, "Paper");
@@ -70,8 +70,8 @@ int main() {
     print_list(creation_list_2);
 
     // add more strings to linked list
-    add_to_list(creation_list_1, "Water");
-    add_to_list(creation_list_1, "clouds");
+    add_to_list(creation_list_2, "Water");
+    add_to_list(creation_list_2, "clouds");
 
     // print list after adding more strings
     printf("\nList after adding strings:\n");
