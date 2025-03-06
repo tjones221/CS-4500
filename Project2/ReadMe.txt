@@ -40,6 +40,27 @@ Part 2:
 * Problem: 
 * Solution:
 
+=============================
+Part 3: 
+============================= 
+
+
+
+=============================
+Part 4: 
+============================= 
+1. What's the difference between a kernel module and a system call?
+
+Kernel modules are code that can be loaded and unloaded into the kernel without requiring a reboot. They are used to extend the functionality of the kernel. 
+
+A system call is a predefined entry point provided by the kernel that allows user-level processes to request services from the operating system. It acts as a "gate" into the kernel, enabling programs to perform privileged operations. They are implemented using software interrupts, which trigger execution in kernel mode. 
+
+Kernel modules can modify or intercept system calls, allowing them to change how the operating system handles certain requests. 
+
+
+2. This article is over 20 years old. If you try this example from the article, does it still work? Use your own words to explain why you think this may be a good (or bad) thing. 
+
+The example from the article does not work anymore, because linux has been updated to prevent the malicious modification of system calls, improving security and stability. Modern linux kernels restrict direct modification of system calls, making the system more resistant to attacks like rootkits. This is a good thing because it helps protect against unauthorized modifications to the kernel, reducing the risk of system compromise and ensuring the integrity of the operating system.  
 
 =============================
 Code Execution Aid:
