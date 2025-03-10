@@ -44,7 +44,13 @@ Part 2:
 Part 3: 
 ============================= 
 
+*Descritpion: The purpose of my function was to take an incoming PID value print the information attached to this number and transverse through the kernel to reach the parent. While transversing the kernel, there should be three descriptors printed with each PID value: PID value, State, and Name.
 
+*Problem: It is difficult understanding how to transverse the tree and what terminal variables could aid me throughout the process. I learned through reading some of the class material that the kernel information that I am searching for is inside of a circular linked list. I have workied with linked list, but never this variation of lists.
+
+*Solution:I got alot of help from Chatgpt breaking information into childlike pieces for me to understand and the readings that were scattered throughout the assignment. This site "https://linuxgazette.net/133/saha.html" had an incredible example on how to transverse the tree starting from the current node. I used chatgpt to break down the variables used throughout the text and then proceeded to brainstorm ways for me to transform this solution into something that fit my situation. Additionally, chapter 4.5 in the "linux programming guide" book helped me understand how to pass the PID value into my function as well. By incoporating the physical books and Chatgpt, I was able to understand how to fix my function and what the components I needed to gracefully transverse the circular tree.
+
+*How to run: make - pgrep bash (you should recieve a number) - sudo insmod print_other.ko pid= (insert number from previous command) - sudo lsmod (remove) - sudo rmmod print_other - sudo dmesg -T | tail - make clean
 
 =============================
 Part 4: 
