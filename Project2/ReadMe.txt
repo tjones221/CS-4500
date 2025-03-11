@@ -55,6 +55,25 @@ Solutions:
 Part 3: 
 ============================= 
 
+Description:
+The purpose of my function was to take an incoming PID value, print the information attached to this number, and traverse through the kernel to reach the parent. While traversing the kernel, three descriptors should be printed with each PID value: PID value, State, and Name.
+
+Problem:
+It is difficult to understand how to traverse the tree and what terminal variables could aid me throughout the process. Through reading some of the class material, I learned that the kernel information I am searching for is inside a circular linked list. I have worked with linked lists before, but never this variation.
+
+Solution:
+I got a lot of help from ChatGPT, which broke down the information into simpler pieces for me to understand, as well as from the readings scattered throughout the assignment. This site, "https://linuxgazette.net/133/saha.html," had an incredible example of how to traverse the tree starting from the current node. I used ChatGPT to break down the variables used throughout the text and then brainstormed ways to adapt the solution to fit my situation. Additionally, Chapter 4.5 in the Linux Programming Guide helped me understand how to pass the PID value into my function. By incorporating both physical books and ChatGPT, I was able to understand how to fix my function and identify the components needed to gracefully traverse the circular tree.
+
+How to run:
+
+make
+pgrep bash (you should receive a number)
+sudo insmod print_other.ko pid=<insert number from previous command>
+sudo lsmod
+sudo rmmod print_other
+sudo dmesg -T | tail
+make clean
+
 
 
 =============================
