@@ -69,7 +69,7 @@ How to run:
 make
 pgrep bash (you should receive a number)
 sudo insmod print_other.ko pid=<insert number from previous command>
-sudo lsmod
+sudo lsmod (you should see the print_other function here)
 sudo rmmod print_other
 sudo dmesg -T | tail
 make clean
