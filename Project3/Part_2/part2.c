@@ -15,7 +15,7 @@ pthread_cond_t not_full = PTHREAD_COND_INITIALIZER;
 pthread_cond_t not_empty = PTHREAD_COND_INITIALIZER;
 
 void* producer_func(void* arg) {
-    FILE *fileptr = fopen("message.txt", "r");
+    FILE *fileptr = fopen("string.txt", "r");
     if (fileptr == NULL) {
         printf("Could not open file\n");
         return NULL;
